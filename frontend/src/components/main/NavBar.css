@@ -1,0 +1,53 @@
+.navBarContainer{
+    background-color: #111;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+.desktopOnly{
+    display: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (width > 480px){
+    .navBarContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 400px;
+        height: 100%;
+        right: 0px;
+        transition: right 0.3s ease-in-out;
+    }
+    .navBarItem{
+        display: flex;
+        gap: 1em;
+        padding: 2em;
+    }
+    .desktopOnly{
+        display: block;
+    }
+    .closeNavBar{
+        right: -400px;
+        background-color: transparent;
+    }
+    .bxs-menu-select{
+    color: #fff;
+    font-size: 2.5rem;
+}
+}
+
+.icon-navbar{
+    font-size: 2rem;
+    color: #fff;
+}

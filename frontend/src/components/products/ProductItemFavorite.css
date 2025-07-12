@@ -1,0 +1,37 @@
+.itemFavoriteContainer{
+    background-color: #eee;
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    gap: .3rem;
+}
+
+.itemFavoriteImg {
+    text-align: left;
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+}
+.itemFavoriteInfo{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    padding: 0em .5em;
+    width: 60%;
+}
+.item-add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemFavoritePrice{
+    font-size: 20px;
+}
+.itemFavoriteInformation{
+    display: flex;
+    justify-content: space-between;
+    color: #fdeedf;
+    background-color: #001335;
+    padding: 0.7em;
+    border-radius: 0.5em;
+}

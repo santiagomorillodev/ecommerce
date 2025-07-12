@@ -1,0 +1,125 @@
+.headerContainer{
+    max-height: 800px;
+    gap: 1em;
+    /* overflow: hidden; */
+}
+.main{
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.navHeaderContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ad9175;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0.7em;
+    align-items: center;
+}
+
+.title{
+    font-size: 1.7rem;
+}
+.buttonNavBar{
+    display: none;
+}
+
+.backArrow{
+    font-size: 3rem;
+}
+
+.bx-menu-select{
+  font-size: 3rem;
+}
+
+.promotion {
+  background-color: #ad9175;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.promotion img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+}
+
+.promotionMessage{
+    font-size: 1.5rem;
+}
+
+.promotionTitle{
+    font-size: 0.8rem;
+    color: #fdf0e3;
+}
+
+.promotionTitlePrice{
+    font-size: 0.8rem;
+    color: #fdf0e3;
+    margin-top: 0.5em;
+}
+
+.promotionPrice{
+    font-size: 1.5rem;
+}
+
+@media (width > 800px) {
+  .promotionMessage {
+    font-size: 2.4rem;
+  }
+  .promotionTitle, .promotionTitlePrice {
+    font-size: 1.4rem;
+  }
+  .promotionPrice {
+    font-size: 2.4rem;
+  }
+  .main{
+    margin: 0 auto;
+  }
+}
+
+.buttonNavBar{
+    background-color: transparent;
+}
+
+.navContainer i{
+    color: #fff;
+    border-radius: 0.3rem;
+    font-size: 2.5rem;
+}
+
+.cartIcon{
+    font-size: 2rem;
+    color: #fff;
+}
+
+@media (width > 480px){
+    .buttonNavBar{
+        display: block;
+    }
+    .imageUsername{
+        display: none;
+    }
+    .cartIcon{
+        display: none;
+    }
+    .promotion{
+        flex-direction: row;
+        margin-top: 3em;
+    }
+    .promotion img{
+        width: 50%;
+        object-fit: cover;
+    }
+}

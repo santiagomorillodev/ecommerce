@@ -1,0 +1,41 @@
+.banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #111;
+    color: #fff;
+    height: 150px;
+    padding: 1em 0em 1em 1em;
+    font-size: 18px;
+    margin: 3em auto;
+    border-radius: 2em;
+    position: relative;
+    overflow: visible;
+}
+
+.containerImg {
+    width: 55%;
+}
+.bannerImg {
+    width: 40%;
+    max-width: 340px;
+    max-height: 340px;
+    border-radius: 1rem;
+}
+.bannerButton{
+    border-radius: 1rem;
+    background-color: #8b6c4d;
+}
+
+@media (width > 860px){
+    .banner{
+        height: 200px;
+    }
+    .bannerInformation p {
+        font-size: 1.5rem;
+    }
+    .bannerButton{
+        font-size: 1.5rem;
+        padding: 0.5em 1em;
+    }
+}

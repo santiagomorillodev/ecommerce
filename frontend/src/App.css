@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik';
+}
+
+body {
+  margin: 0;
+
+}
+
+.headerContainer{
+  grid-area: header;
+}
+
+.sectionCarousel{
+  grid-area: carousel;
+}
+
+.products{
+  grid-area: products;
+  padding-bottom: 60px; /* o el alto de tu navbar */
+}
+.navBarContainer {
+  grid-area: navBar;
+
+  /* para que esté sobre todo lo demás */
+}
+a{
+  color: #000;
+}
+
+i{
+  font-size: 1rem;
+}
+.mainHome{
+  max-width: 70em;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+li{
+  list-style: none;
+}

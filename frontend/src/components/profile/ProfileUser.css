@@ -1,0 +1,239 @@
+.sectionProfile{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.profileHeader{
+    display: flex;
+    justify-content: space-between;
+    background-color: #8b6c4d;
+}
+
+.profileHeader i{
+    font-size: 3rem;
+}
+
+.profileUserInformation{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    background-color: #8b6c4d;
+    padding: 1em;
+    color: #fff;
+}
+.profileImageUser{
+    width: 10em;
+    border-radius: 50% 50%;
+    border: 3px solid #ffdcba;
+    box-shadow: 0 2px 4px #00000033, 0 8px 16px #00000033;
+
+}
+
+.sectionFavoritesTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    border-radius: 0.5rem;
+    width: 44%;
+}
+
+.favoritesTitle{
+    font-size: 1.5rem;
+    color: #fdeedf;
+}
+
+.profileIcon{
+    font-size: 2rem;
+}
+
+.favoriteItems{
+    display: flex;
+    flex-direction: column;
+    gap: .7em;
+    padding: 0.5em;
+}
+
+.purchasedProductsTitle{
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1.5em;
+    background-color: #111;
+    color: #fff;
+    border-radius: 0.5em;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.profileInfoContainer{
+    width: 90%;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0 auto;
+}
+
+.pendientes{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+    gap: 0.5em;
+    padding: 0.5em;
+    background-color: #8b6c4d;
+    border-radius: 0.5rem;
+}
+
+.userInformation{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 350px;
+    min-width: 350px;
+}
+
+.userInformation ul{
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    padding: 1em;
+    gap: 1rem;
+}
+
+.liTitle{
+    font-size: 1.3rem;
+}
+
+.userInformation div{
+    background-color: #eee;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.userInformation div h3{
+    font-size: 1.4rem;
+    padding-left: 0.5em;
+}
+
+.pendientes .item:nth-child(3){
+    grid-column: 1 / span 2;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pendientes .item:nth-child(3) section{
+    width: 40%;
+}
+
+.pendientes .item:nth-child(3) .pendientesImg{
+    position: absolute;
+    right: 0%;
+    width: 70%;
+    max-width: 500px;
+}
+
+.pendientes .item:nth-child(3) .itemInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+@media (width >= 600px){
+    .purchasedProductsTitle{
+        font-size: 2.5rem;
+    }
+}
+
+@media (width >= 800px){
+    .purchasedProductsTitle{
+        font-size: 3rem;
+    }
+    .profileInfoContainer{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .pendientes{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        max-width: 600px;
+    }
+    .userInformation ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .userInformation{
+        width: 33%;
+    }
+}
+
+
+@media (width >= 1100px){
+    .pendientes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .pendientes .item:nth-child(2){
+        grid-column: 2 / span 2;
+        flex-direction: row;
+        align-items: center;
+    }
+    .pendientes .item:nth-child(2) section{
+        order: -1;
+        width: 60%;
+    }
+    .pendientes .item:nth-child(2) .pendienteItemDescription{
+        font-size: 1.3rem;
+    }
+    .pendientes .item:nth-child(2) .pendientesImg{
+        position: absolute;
+        right: -12%;
+        width: 70%;
+    }
+
+    .pendientes .item:nth-child(2) .pendientesInfo{
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
+        gap: 1em;
+    }
+
+    .pendientes .item:nth-child(3){
+        grid-column: 1 / span 3;
+        flex-direction: row;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .pendientes .item:nth-child(3) section{
+        width: 40%;
+    }
+
+    .pendientes .item:nth-child(3) .pendienteTitle{
+        font-size: 2.5rem;
+    }
+
+    .pendientes .item:nth-child(3) .pendienteItemDescription{
+        font-size: 2rem;
+    }
+
+    .pendientes .item:nth-child(3) span{
+        font-size: 1.5rem;
+    }
+
+    .pendientes .item:nth-child(3) .pendientesImg{
+        position: absolute;
+        right: 0%;
+        width: 70%;
+        max-width: 500px;
+    }
+
+    .pendientes .item:nth-child(3) .itemInfo{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}

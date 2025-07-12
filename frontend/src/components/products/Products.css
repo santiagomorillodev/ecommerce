@@ -1,0 +1,42 @@
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.products.few-products{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+    margin: 0 auto;
+}
+
+
+
+@media (width <= 424px){
+    .products{
+        grid-template-columns: repeat(2, minmax(80px, 1fr));
+    }
+    .item{
+        font-size: 0.7rem;
+    }
+}
+@media (width >= 600px){
+    .purchasedProductsTitle{
+        font-size: 2.5rem;
+    }
+}
+
+@media (width > 1200px){
+    .products{
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 100%;
+    }
+}
+
+@media (width > 1500px){
+    .products{
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 100%;
+    }
+}
