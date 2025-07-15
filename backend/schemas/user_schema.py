@@ -1,13 +1,13 @@
 from pydantic import BaseModel, EmailStr, constr
+from typing import Optional
 
 class UserBase(BaseModel):
     username:str
-    password:str
     name:str
     email:EmailStr
     
 class UserCreate(UserBase):
-    pass
+    password:str
 
 class UserRead(UserBase):
     pass
@@ -15,3 +15,13 @@ class UserRead(UserBase):
 class UserLogin(BaseModel):
     username: str
     password: str
+    
+class UserDelete(BaseModel):
+    username: str
+    password: str
+
+class UserUpdate(BaseModel):
+    username:Optional[str] = None
+    password:Optional[str] = None
+    name:Optional[str] = None
+    email:Optional[EmailStr] = None
