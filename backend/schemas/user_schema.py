@@ -17,7 +17,6 @@ class UserLogin(BaseModel):
     password: str
     
 class UserDelete(BaseModel):
-    username: str
     password: str
 
 class UserUpdate(BaseModel):

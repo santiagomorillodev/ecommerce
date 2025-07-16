@@ -10,3 +10,6 @@ def search_user(user: User, db:Session):
         return None
     
     return user_db
+
+def get_user_by_id (user: User, db:Session):
+    return db.query(User).filter(User.id == user.id).first()

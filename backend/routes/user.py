@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
 from database import get_db
 from models import User
 from schemas import UserCreate, UserRead, UserLogin, UserUpdate, UserDelete
 from utils import search_user
-from auth import hash_password, verify_password, create_access_token
+from auth import hash_password, verify_password, create_access_token, get_current_user
 
 
 router = APIRouter()
@@ -25,8 +26,15 @@ def login (user:UserLogin, db:Session = Depends(get_db)):
                 detail={'Message': 'Invalid credentials'}
             )
         token = create_access_token({'sub': str(user_db.id)})
-        print(token)
-        return {'token': token, 'token_type': 'bearer'}
+        response = JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={'Message': 'Login successful'}
+        )
+        response.set_cookie(
+            key='access_token',
+            value=token
+        )
+        return response
     except Exception as error:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -57,8 +65,8 @@ def register(user: UserCreate, db:Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail={"Message": str(e)})
 
 @router.patch('/update')
-def user_update(user_id: int, update_data:UserUpdate, db:Session = Depends(get_db)):
-    user = db.query(User).filter(User.id == user_id).first()
+def user_update(update_data:UserUpdate, user: User = Depends(get_current_user), db:Session = Depends(get_db)):
+    user = db.query(User).filter(User.id == user.id).first()
     
     if not user:
         raise HTTPException(
@@ -77,9 +85,9 @@ def user_update(user_id: int, update_data:UserUpdate, db:Session = Depends(get_d
     return UserRead(**user.__dict__)
 
 @router.delete('/delete')
-def user_delete(user:UserDelete, db:Session = Depends(get_db)):
+def user_delete(password:UserDelete, user: User = Depends(get_current_user), db:Session = Depends(get_db)):
     try:
-        user_db = db.query(User).filter(and_(User.username == user.username, User.password == user.password)).first()
+        user_db = db.query(User).filter(and_(User.id == user.id, User.password == password)).first()
         
         if not user_db:
             raise HTTPException(

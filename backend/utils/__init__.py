@@ -1,1 +1,1 @@
-from .user_query import search_user
+from .user_query import search_user, get_user_by_id
